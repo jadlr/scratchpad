@@ -1,7 +1,9 @@
 package io.trsc.scratchpad
 
-object Main extends App {
+import cats.effect.{ExitCode, IO, IOApp}
 
-  println("scratchpad")
-
+object Main extends IOApp {
+  override def run(args: List[String]): IO[ExitCode] = {
+    IO.delay(println("Hello")).map(_ => ExitCode.Success)
+  }
 }
