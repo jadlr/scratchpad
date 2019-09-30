@@ -2,10 +2,12 @@ import sbt._
 
 object Dependencies {
 
-  private val CatsVersion       = "1.5.0"
-  private val CatsEffectVersion = "1.2.0"
-  private val CirceVersion      = "0.11.1"
+  private val CatsVersion       = "2.0.0"
+  private val CatsEffectVersion = "2.0.0"
+  private val CirceVersion      = "0.12.1"
   private val LogbackVersion    = "1.2.3"
+  private val Specs2Version     = "4.7.1"
+
 
   lazy val runtimeDeps: Seq[ModuleID] = Seq(
     "org.typelevel"         %% "cats-core"              % CatsVersion,
@@ -17,7 +19,7 @@ object Dependencies {
   )
 
   lazy val testDeps: Seq[ModuleID] = Seq(
-    "org.specs2" %% "specs2-core" % "4.4.1"
+    "org.specs2" %% "specs2-core" % Specs2Version
   ).map(_ % Test)
 
 }
