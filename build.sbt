@@ -9,13 +9,7 @@ lazy val root = (project in file(".")).settings(
       scalacOptions ++= ScalacOptions.opts,
       scalacOptions in (Compile, console) --= ScalacOptions.excludeInConsoleAndCompile,
       addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.10.3"),
-      shellPrompt := { state ⇒
-          s"[${scala.Console.CYAN}%s${scala.Console.RESET}] λ ".format {
-            Project.extract(state).getOpt(sbt.Keys.name).getOrElse {
-              Project.extract(state).currentProject.id
-            }
-          }
-        }
+      shellPrompt := Prompt.format
     )
   ),
   name := "scratchpad",
