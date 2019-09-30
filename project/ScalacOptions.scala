@@ -49,7 +49,7 @@ object ScalacOptions {
     "-Ywarn-value-discard"               // Warn when non-Unit expression results are unused.
   )
 
-  val excludeInConsoleAndCompile = Set(
+  val excludeInConsoleAndCompile: Set[String] = Set(
     "-Ywarn-unused:imports",
     "-Xfatal-warnings"
   )
