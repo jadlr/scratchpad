@@ -4,11 +4,10 @@ lazy val root = (project in file(".")).settings(
   inThisBuild(
     List(
       organization := "io.trsc",
-      scalaVersion := "2.13.3",
+      scalaVersion := "2.13.5",
       version := "0.1.0-SNAPSHOT",
       scalacOptions ++= ScalacOptions.opts,
-      scalacOptions in (Compile, console) --= ScalacOptions.excludeInConsoleAndCompile,
-      addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.10.3"),
+      addCompilerPlugin("org.typelevel" % "kind-projector" % "0.11.3" cross CrossVersion.full),
       shellPrompt := Prompt.format
     )
   ),
